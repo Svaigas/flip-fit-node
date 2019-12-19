@@ -1,0 +1,24 @@
+{
+  "name": "flip-fit-node",
+  "version": "1.0.0",
+  "description": "Flip Fit recruitment Rest API",
+  "main": "server.js",
+  "scripts": {
+    "test": "test",
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "12.14.0"
+  },
+  "keywords": [
+    "flipfit",
+    "node",
+    "api",
+    "rest"
+  ],
+  "author": "Mateusz Adamiec (Svaigas)",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
