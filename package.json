@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "test",
-    "start": "node server.js"
+    "start": "node src/server.js"
   },
   "engines": {
     "node": "12.14.0"
@@ -19,6 +19,7 @@
   "author": "Mateusz Adamiec (Svaigas)",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "express": "^4.17.1"
   }
 }
