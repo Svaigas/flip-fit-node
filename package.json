@@ -23,14 +23,17 @@
   "author": "Mateusz Adamiec (Svaigas)",
   "license": "ISC",
   "dependencies": {
+    "celebrate": "^11.0.0",
     "dotenv": "^8.2.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongoose": "^5.8.1"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "eslint": "^6.7.2",
     "eslint-config-google": "^0.14.0",
+    "mongodb-memory-server": "^6.1.1",
     "rimraf": "^3.0.0"
   }
 }
