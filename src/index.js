@@ -1,7 +1,6 @@
 import express from 'express'
 import routesV1 from './routes/routes'
 import {} from 'dotenv/config'
-import bodyParser from 'body-parser'
 
 const app = express()
 const PORT = process.env.PORT || 3000
@@ -10,7 +9,7 @@ import { MongoMemoryServer } from 'mongodb-memory-server'
 export const mongoServer = new MongoMemoryServer()
 import { createSchemas } from '../db/index'
 
-app.use(bodyParser)
+app.use(express.json())
 app.use('/v1', routesV1)
 
 app.listen(PORT, async () => {

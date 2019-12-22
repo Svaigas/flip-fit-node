@@ -12,7 +12,9 @@ export async function createSchemas(uri) {
   const Product = mongoose.model('Product', productSchema)
 
   const cartSchema = new Schema({
-    products: [{ type: Schema.Types.ObjectId, ref: 'Product' }]
+    products: [{ type: Schema.Types.ObjectId, ref: 'Product' }],
+    cartPrice: { type: Number },
+    isCheckedout: { type: Boolean, default: false }
   })
   const Cart = mongoose.model('Cart', cartSchema)
 
