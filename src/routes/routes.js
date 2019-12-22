@@ -12,7 +12,7 @@ routerV1.get('/:type', genericV1.findById)
 routerV1.get('/:type/:id', genericV1.findById)
 
 // POST routes
-
+routerV1.post('/:type', genericV1.getInsert)
 // PUT routes
 
 // DELETE routes
