@@ -9,12 +9,12 @@ export async function createSchemas(uri) {
     price: { type: Number, required: true },
     currency: { type: String, required: false, default: 'EUR' }
   })
-  const Product = mongoose.model('Product', productSchema)
+  mongoose.model('Product', productSchema)
 
   const cartSchema = new Schema({
     products: [{ type: Schema.Types.ObjectId, ref: 'Product' }],
     cartPrice: { type: Number }
   })
-  const Cart = mongoose.model('Cart', cartSchema)
+  mongoose.model('Cart', cartSchema)
   mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
 }
