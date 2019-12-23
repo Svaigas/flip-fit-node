@@ -30,7 +30,7 @@ export async function getUpdate(req,res) {
 }
 
 export default async function exchangePrice(price, currency) {
-  const rate = await request('https://api.exchangeratesapi.io/latest')
+  const rate = await request(process.env.EXCHANGE)
       .then(function(data) {
         const parsedBody = JSON.parse(data)
         return parsedBody.rates[currency]

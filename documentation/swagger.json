@@ -1,0 +1,244 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Flip API Task",
+    "description": "REST APIs for Flip Fit Node Requruitment TASK",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "localhost:2150",
+      "description": "dev server"
+    }
+  ],
+  "paths": {
+    "/product/:id": {
+      "get": {
+        "summary": "Returns a product data.",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "currency",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Currency like a USD, EUR, PLN"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A JSON object with product properties",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "quantity": {
+                      "type": "number"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "price": {
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/cart/:id": {
+      "get": {
+        "summary": "Returns a Cart data.",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "currency",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Currency like a USD, EUR, PLN"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A JSON object with product properties",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "products": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/product": {
+      "post": {
+        "summary": "Allows creation of new Product",
+        "responses": {
+          "200": {
+            "description": "A JSON object with product properties",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "quantity": {
+                      "type": "number"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "price": {
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/product/id": {
+      "put": {
+        "summary": "Allows update of already existing Product",
+        "responses": {
+          "200": {
+            "description": "A JSON object with product properties",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "quantity": {
+                      "type": "number"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "price": {
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Allows update of already existing Product",
+        "responses": {
+          "200": {
+            "description": "Succesfully Deleted Cart",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/cart": {
+      "post": {
+        "summary": "Allows creation of new Cart",
+        "responses": {
+          "200": {
+            "description": "A JSON object with Cart properties",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "products": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/cart/id": {
+      "put": {
+        "summary": "Allows update of already existing Cart",
+        "responses": {
+          "200": {
+            "description": "A JSON object with Cart properties",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "products": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Allows update of already existing Cart",
+        "responses": {
+          "200": {
+            "description": "Succesfully Deleted Cart",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
