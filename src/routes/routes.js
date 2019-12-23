@@ -31,7 +31,7 @@ routerV1.post('/product', validatePOSTproduct, products.getInsert)
 
 // PUT routes
 routerV1.put('/cart/:id', validatePUTcart, carts.getUpdate)
-routerV1.put('/product/:id',validatePUTproduct, products.getUpdate)
+routerV1.put('/product/:id', validatePUTproduct, products.getUpdate)
 
 // DELETE routes
 routerV1.delete('/:type/:id', validateGETandDEL, genericV1.getRemove)
