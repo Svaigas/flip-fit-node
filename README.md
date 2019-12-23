@@ -30,14 +30,19 @@ Then, just simply do:
 $> npm start
 ```
 
-
+To use each of API, there is needed to generete Bearer Token by calling:
+``` 
+GET http://localhost:2150/v1/login
+```
+And then catch returned value and set Authorization header to it
+![Token Postman Example](./documentation/token_example.png) 
 
 Once application start there is possibility to check if is up and running:
 ```
 Santa Claus: 
-http://localhost:2150/v1/
+GET http://localhost:2150/v1/
 Swagger Docs: 
-http://localhost:2150/v1/api-docs/
+GET http://localhost:2150/v1/api-docs/
 ```
 
 ## Tests

@@ -3,10 +3,10 @@ import routesV1 from './routes/routes'
 import {} from 'dotenv/config'
 import { errors } from 'celebrate'
 import bodyParser from 'body-parser'
+import jwt from 'jsonwebtoken'
 
 const app = express()
 const PORT = process.env.PORT || 3000
-const NODE_ENV = process.env.NODE_ENV
 
 import { MongoMemoryServer } from 'mongodb-memory-server'
 export const mongoServer = new MongoMemoryServer()

@@ -17,6 +17,7 @@
     "rules": {
         "comma-dangle": ["error", "never"],
         "object-curly-spacing": [2, "always"],
-        "semi": 0
+        "semi": 0,
+        "max-len": ["error", { "code": 100 }]
     }
 }
