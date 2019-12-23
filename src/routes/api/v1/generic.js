@@ -44,19 +44,6 @@ export async function findById(req, res) {
   }
 }
 
-export async function getInsert(req, res) {
-  const { params: { type }, body } = req
-
-  const modelName = type.replace(/^./, type[0].toUpperCase())
-  const Model = mongoose.model(modelName)
-
-  const itemToSave = new Model(body)
-  await itemToSave.save(function(err, data) {
-    if (err) res.send(err)
-    res.json({ message: 'New Item Created Successfully', data })
-  })
-}
-
 export async function getRemove(req,res) {
   const { params: { id, type } } = req
   const modelName = type.replace(/^./, type[0].toUpperCase())

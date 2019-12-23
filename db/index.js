@@ -7,26 +7,14 @@ export async function createSchemas(uri) {
     quantity: { type: Number, required: true },
     description: { type: String, required: false },
     price: { type: Number, required: true },
-    currency: { type: String, required: true }
+    currency: { type: String, required: false, default: 'EUR' }
   })
   const Product = mongoose.model('Product', productSchema)
 
   const cartSchema = new Schema({
     products: [{ type: Schema.Types.ObjectId, ref: 'Product' }],
-    cartPrice: { type: Number },
-    isCheckedout: { type: Boolean, default: false }
+    cartPrice: { type: Number }
   })
   const Cart = mongoose.model('Cart', cartSchema)
-
-  await Product.create({
-    name: 'MacBook Pro',
-    quantity: 2,
-    description: 'example description',
-    price: 2.15,
-    currency: 'EUR'
-  }, function(err,data) {
-    console.log(data.id)
-    if (err) throw err
-  })
   mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
 }

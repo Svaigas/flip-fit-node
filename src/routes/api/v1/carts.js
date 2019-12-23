@@ -2,6 +2,17 @@ import mongoose from 'mongoose'
 import exchangePrice from './products'
 import { countBy } from 'ramda'
 
+export async function getInsert(req, res) {
+  const { body } = req
+  const Model = mongoose.model('Cart')
+
+  const itemToSave = new Model(body)
+  await itemToSave.save(function(err, data) {
+    if (err) res.send(err)
+    res.json({ message: 'New Item Created Successfully', data })
+  })
+}
+
 export async function getUpdate(req,res) {
   const { params: { id }, body } = req
   const Model = mongoose.model('Cart')
